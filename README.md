@@ -1,4 +1,4 @@
-US English layout with Czech language diacritics chars
+US English keyboard layout with Czech diacritics
 
 Layout zustava pri cestine stejny jako pro anglickou klavesnici
 AltGr vraci hodnotu CZ klaves zpet na US
