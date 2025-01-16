@@ -1,8 +1,8 @@
-US English keyboard layout with Czech diacritics
+US English keyboard layout with Czech diacritics  
 
-Layout zustava pri cestine stejny jako pro anglickou klavesnici
-AltGr vraci hodnotu CZ klaves zpet na US
-2025 - (C) - Tomas Mark (tomas@digitalspace.name)
+Layout zustava pri cestine stejny jako pro anglickou klavesnici  
+AltGr vraci hodnotu CZ klaves zpet na US  
+2025 - (C) - Tomas Mark (tomas@digitalspace.name)  
 
 ![image](https://github.com/user-attachments/assets/6a0214c2-4342-4568-9ae0-8872af8ff5ac)
 
