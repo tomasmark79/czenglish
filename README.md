@@ -9,3 +9,4 @@ Rozložení české klávesnice pro zachování maximální podoby amerického r
 sudo vim /usr/share/X11/xkb/symbols/cz
 sudo vim /usr/share/X11/xkb/rules/evdev.xml
 ```
+
