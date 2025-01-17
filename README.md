@@ -1,13 +1,11 @@
-US English keyboard layout with Czech diacritics
 
-Layout zustava pri cestine stejny jako pro anglickou klavesnici
-AltGr vraci hodnotu CZ klaves zpet na US
-2025 - (C) - Tomas Mark (tomas@digitalspace.name)
+Rozložení české klávesnice pro zachování maximální podoby amerického rozložení, které mě osobně přijde prakticky dokonalé. V kombinaci s US anglickou klávesnicí se při přepínání těchto dvou rozložení minimalizuje potřeba myslet na změny v klasickém českém rozložení, které např. rozbíjejí nastavené klávesové zkratky, apod.
 
-![image](https://github.com/user-attachments/assets/6a0214c2-4342-4568-9ae0-8872af8ff5ac)
+![image](czenglish-keyboard-layout.png)
+
+### KOnfigurace probíhá v
 
 ```bash
-tomas@rebian ~ $ sudo vim /usr/share/X11/xkb/symbols/cz
-tomas@rebian ~ $ sudo vim /usr/share/X11/xkb/rules/evdev.xml
+sudo vim /usr/share/X11/xkb/symbols/cz
+sudo vim /usr/share/X11/xkb/rules/evdev.xml
 ```
-

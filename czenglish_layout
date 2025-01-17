@@ -1,25 +1,24 @@
 partial alphanumeric_keys
 xkb_symbols "czenglish" {
-    // US English layout with Czech language diacritics chars
-    // Layout zustava pri cestine stejny jako pro anglickou klavesnici
-    // AltGr vraci hodnotu CZ klaves zpet na US
+    // Custom Czech Keyboard Layout
+    // Goal is to stay almost same like the US layout
     // 2025 - (C) - Tomas Mark (tomas@digitalspace.name)
-    
+
     name[Group1]= "Czech (czenglish)";
 
     key <TLDE> {        [     grave,    asciitilde      ]       };
     key <AE01> {        [         1,    exclam          ]       };
-    key <AE02> {        [    ecaron,    Ecaron, 2,      at              ]       };
-    key <AE03> {        [    scaron,    Scaron, 3,      numbersign      ]       };
-    key <AE04> {        [    ccaron,    Ccaron, 4,      dollar          ]       };
-    key <AE05> {        [    rcaron,    Rcaron, 5,      percent         ]       };
-    key <AE06> {        [    zcaron,    Zcaron, 6,      asciicircum     ]       };
-    key <AE07> {        [    yacute,    Yacute, 7,      ampersand       ]       };
-    key <AE08> {        [    aacute,    Aacute, 8,      asterisk        ]       };
-    key <AE09> {        [    iacute,    Iacute, 9,      parenleft       ]       };
-    key <AE10> {        [    eacute,    Eacute, 0,      parenright      ]       };
+    key <AE02> {        [    ecaron,    2, at, caron]           };
+    key <AE03> {        [    scaron,    3, numbersign, Scaron]  };
+    key <AE04> {        [    ccaron,    4, dollar, Ccaron]      };
+    key <AE05> {        [    rcaron,    5, percent, Rcaron]     };
+    key <AE06> {        [    zcaron,    6, asciicircum, Zcaron] };
+    key <AE07> {        [    yacute,    7, ampersand, Yacute]   };
+    key <AE08> {        [    aacute,    8, asterisk, Aacute]    };
+    key <AE09> {        [    iacute,    9, parenleft, Iacute]   };
+    key <AE10> {        [    eacute,    0, parenright, Eacute]  };
     key <AE11> {        [     minus,    underscore      ]       };
-    key <AE12> {        [dead_acute,    dead_caron,     equal,  plus    ]       };
+    key <AE12> {        [dead_acute,    dead_caron,     equal,  plus]   };
 
     key <AD01> {        [         q,    Q               ]       };
     key <AD02> {        [         w,    W               ]       };
@@ -31,8 +30,8 @@ xkb_symbols "czenglish" {
     key <AD08> {        [         i,    I               ]       };
     key <AD09> {        [         o,    O               ]       };
     key <AD10> {        [         p,    P               ]       };
-    key <AD11> {        [    uacute,    Uacute,         bracketleft,  braceleft       ]       };
-    key <AD12> {      [bracketright,    braceright      ]       };
+    key <AD11> {        [    uacute,    braceleft, bracketleft, Uacute] };
+    key <AD12> {        [bracketright,  braceright      ]       };
 
     key <AC01> {        [         a,    A               ]       };
     key <AC02> {        [         s,    S               ]       };
@@ -44,7 +43,7 @@ xkb_symbols "czenglish" {
     key <AC08> {        [         k,    K               ]       };
     key <AC09> {        [         l,    L               ]       };
     key <AC09> {        [         l,    L               ]       };
-    key <AC10> {        [     uring,    Uring,          semicolon,    colon            ]       };
+    key <AC10> {        [     uring,    colon, semicolon, Uring]       };
     key <AC11> {        [apostrophe,    quotedbl        ]       };
 
     key <AB01> {        [         z,    Z               ]       };
@@ -57,8 +56,7 @@ xkb_symbols "czenglish" {
     key <AB08> {        [     comma,    less            ]       };
     key <AB09> {        [    period,    greater         ]       };
     key <AB10> {        [     slash,    question        ]       };
-    key <BKSL> {        [ backslash,    bar,            dead_diaeresis       ]       };
+    key <BKSL> {        [ backslash,    bar,            dead_diaeresis] };
 
     include "level3(ralt_switch)"
 };
-
