@@ -3,7 +3,7 @@ Rozložení české klávesnice pro zachování maximální podoby amerického r
 
 ![image](czenglish-keyboard-layout.png)
 
-### KOnfigurace probíhá v
+### Konfigurace probíhá v
 
 ```bash
 sudo vim /usr/share/X11/xkb/symbols/cz
