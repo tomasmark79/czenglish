@@ -1,5 +1,5 @@
 
-Rozložení české klávesnice pro zachování maximální podoby amerického rozložení, které mě osobně přijde prakticky dokonalé. V kombinaci s US anglickou klávesnicí se při přepínání těchto dvou rozložení minimalizuje potřeba myslet na změny v klasickém českém rozložení, které např. rozbíjejí nastavené klávesové zkratky, apod.
+Rozložení české klávesnice pro zachování maximální podoby US amerického rozložení. V kombinaci s US anglickou klávesnicí se při přepínání těchto dvou rozložení minimalizuje potřeba myslet na změny v klasickém českém rozložení, a zůstávají přístupné formátovací znaky pro Markdown pouze z levé ruky, atd.
 
 ![image](czenglish-keyboard-layout.png)
 
