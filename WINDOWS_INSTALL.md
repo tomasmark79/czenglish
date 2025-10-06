@@ -99,13 +99,13 @@ Dead keys:
 
 **Základní layout (bez modifikátorů):**
 - Číselná řada: `ěščřžýáíé` (místo 1234567890)
-- `[` klávesa: `ú` (uacute)
+- `[` klávesa: `[` (levá hranatá závorka)
 - `;` klávesa: `ů` (uring)
 
 **Se Shiftem:**
 - Číselná řada: `1234567890` (klasické číslice)
-- `[` + Shift: `{`
-- `;` + Shift: `:`
+- `[` + Shift: `{` (levá složená závorka)
+- `;` + Shift: `:` (dvojtečka)
 
 **S AltGr (pravý Alt):**
 - **AltGr + 2**: `@`
@@ -119,9 +119,7 @@ Dead keys:
 - **AltGr + 0**: `)`
 - **AltGr + =**: `=`
 - **AltGr + E**: `€` (Euro)
-- **AltGr + [**: `[` (levá hranatá závorka)
 - **AltGr + ;**: `;` (středník)
-- **AltGr + \**: Dead diaeresis (přehláska) - a→ä, e→ë, o→ö, u→ü
 
 **S AltGr + Shift:**
 - **AltGr + Shift + =**: `+`
@@ -133,8 +131,11 @@ Dead keys:
 - **AltGr + Shift + 8**: `Á`
 - **AltGr + Shift + 9**: `Í`
 - **AltGr + Shift + 0**: `É`
-- **AltGr + Shift + [**: `Ú`
 - **AltGr + Shift + ;**: `Ů`
+
+**Pro psaní ú/Ú:**
+- Dead key čárka (=) → u → `ú`
+- Dead key čárka (=) → Shift+U → `Ú`
 
 ## Problémy a řešení
 
