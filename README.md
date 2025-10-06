@@ -19,40 +19,51 @@ Zkopírujte obsah souboru `czenglish_layout` do `/usr/share/X11/xkb/symbols/cz` 
 
 ### Windows
 
-Pro Windows použijte jeden z následujících způsobů:
-
-1. **Microsoft Keyboard Layout Creator (doporučeno)**
-   - Stáhněte [MSKLC](https://www.microsoft.com/en-us/download/details.aspx?id=102134)
-   - Načtěte soubor `czenglish.klc`
-   - Zkompilujte a nainstalujte
+1. **Stáhněte Microsoft Keyboard Layout Creator (MSKLC)**
+   - [MSKLC Download](https://www.microsoft.com/en-us/download/details.aspx?id=102134)
    
-2. **Automatická instalace**
-   ```cmd
-   Install-Windows.bat
-   ```
-   nebo
-   ```powershell
-   .\Install-CzEnglishLayout.ps1
-   ```
+2. **Zkompilujte layout**
+   - Otevřete MSKLC
+   - Načtěte soubor `czenglish.klc` (File → Load Source File)
+   - Zkompilujte: Project → Build DLL and Setup Package
+   
+3. **Nainstalujte**
+   - Spusťte vygenerovaný `setup.exe` jako administrátor
+   - Nebo použijte skript: `Install-Windows.bat`
+   
+4. **Aktivujte**
+   - Settings → Time & Language → Language & region
+   - Czech → Options → Add a keyboard → Czech CZ-EN
 
-**Podrobný návod pro Windows:** Viz [WINDOWS_INSTALL.md](WINDOWS_INSTALL.md)
+## Layout funkce
+
+### Základní české znaky (bez Shift):
+```
+Klávesy: 2 3 4 5 6 7 8 9 0 ; [
+Znaky:   ě š č ř ž ý á í é ů ú
+```
+
+### Se Shiftem:
+```
+Číslice: 1 2 3 4 5 6 7 8 9 0
+```
+
+### S AltGr (pravý Alt / Ctrl+Alt):
+```
+Speciální znaky: @ # $ % ^ & * ( ) = € [ ;
+```
+
+### Dead keys:
+- **`=` klávesa**: Dead acute → pak písmeno → á, é, í, ó, ú, ý
+- **Shift + `=`**: Dead caron → pak písmeno → č, ď, ě, ň, ř, š, ť, ž
 
 ## Soubory
 
 - `czenglish_layout` - XKB layout definice pro Linux
 - `evdev.xml` - Fragment pro registraci v XKB
-- `czenglish_exact.klc` - Microsoft Keyboard Layout Creator soubor pro Windows (kompatibilní s CP1250)
-- `Install-CzEnglishLayout.ps1` - PowerShell instalační skript pro Windows
-- `Install-Windows.bat` - Batch instalační skript pro Windows
-- `WINDOWS_INSTALL.md` - Detailní návod pro instalaci na Windows
-- `PLATFORM_DIFFERENCES.md` - Rozdíly mezi Linux a Windows verzí
-
-## Důležité poznámky
-
-⚠️ **Windows verze má drobné rozdíly** kvůli omezením code page 1250:
-- Dead diaeresis (AltGr + \) není k dispozici
-- Všechny české znaky fungují identicky na obou platformách
-- Detaily viz [PLATFORM_DIFFERENCES.md](PLATFORM_DIFFERENCES.md)
+- `czenglish.klc` - Microsoft Keyboard Layout Creator soubor pro Windows
+- `Install-Windows.bat` - Instalační skript pro Windows
+- `czenglish-keyboard-layout.png` - Vizualizace layoutu
 
 ## Licence
 
