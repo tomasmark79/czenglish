@@ -41,10 +41,18 @@ Pro Windows použijte jeden z následujících způsobů:
 
 - `czenglish_layout` - XKB layout definice pro Linux
 - `evdev.xml` - Fragment pro registraci v XKB
-- `czenglish.klc` - Microsoft Keyboard Layout Creator soubor pro Windows
+- `czenglish_exact.klc` - Microsoft Keyboard Layout Creator soubor pro Windows (kompatibilní s CP1250)
 - `Install-CzEnglishLayout.ps1` - PowerShell instalační skript pro Windows
 - `Install-Windows.bat` - Batch instalační skript pro Windows
 - `WINDOWS_INSTALL.md` - Detailní návod pro instalaci na Windows
+- `PLATFORM_DIFFERENCES.md` - Rozdíly mezi Linux a Windows verzí
+
+## Důležité poznámky
+
+⚠️ **Windows verze má drobné rozdíly** kvůli omezením code page 1250:
+- Dead diaeresis (AltGr + \) není k dispozici
+- Všechny české znaky fungují identicky na obou platformách
+- Detaily viz [PLATFORM_DIFFERENCES.md](PLATFORM_DIFFERENCES.md)
 
 ## Licence
 
