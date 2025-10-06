@@ -1,4 +1,4 @@
-KBD	czenglish	"Czech (czenglish)"
+KBD	czengls	"Czech (czenglish)"
 
 COPYRIGHT	"(c) 2025 Tomas Mark"
 
@@ -24,7 +24,7 @@ LAYOUT		;an extra '@' at the end is a dead key
 //--	----		----	----	----	----	----	----
 
 02	1		0	1	0021	-1	-1	-1		// DIGIT ONE, EXCLAMATION MARK
-03	2		0	011b	0032	-1	0040	030c		// ECARON, DIGIT TWO, , AT, CARON (combining)
+03	2		0	011b	0032	-1	0040	-1		// ECARON, DIGIT TWO, , AT
 04	3		0	0161	0033	-1	0023	0160		// SCARON, DIGIT THREE, , NUMBER SIGN, SCARON (upper)
 05	4		0	010d	0034	-1	0024	010c		// CCARON, DIGIT FOUR, , DOLLAR SIGN, CCARON (upper)
 06	5		0	0159	0035	-1	0025	0158		// RCARON, DIGIT FIVE, , PERCENT SIGN, RCARON (upper)
@@ -45,7 +45,7 @@ LAYOUT		;an extra '@' at the end is a dead key
 17	I		1	i	I	-1	-1	-1		// LATIN SMALL LETTER I, LATIN CAPITAL LETTER I
 18	O		1	o	O	-1	-1	-1		// LATIN SMALL LETTER O, LATIN CAPITAL LETTER O
 19	P		1	p	P	-1	-1	-1		// LATIN SMALL LETTER P, LATIN CAPITAL LETTER P
-1a	OEM_4		0	016f	007b	-1	005b	016e		// URING, LEFT CURLY BRACKET, , LEFT SQUARE BRACKET, URING (upper)
+1a	OEM_4		0	00fa	007b	-1	005b	00da		// UACUTE, LEFT CURLY BRACKET, , LEFT SQUARE BRACKET, UACUTE (upper)
 1b	OEM_6		0	005d	007d	-1	-1	-1		// RIGHT SQUARE BRACKET, RIGHT CURLY BRACKET
 1e	A		1	a	A	-1	-1	-1		// LATIN SMALL LETTER A, LATIN CAPITAL LETTER A
 1f	S		1	s	S	-1	-1	-1		// LATIN SMALL LETTER S, LATIN CAPITAL LETTER S
@@ -114,16 +114,12 @@ DEADKEY	00a8
 
 0061	00e4	// a -> ä
 0065	00eb	// e -> ë
-0069	00ef	// i -> ï
 006f	00f6	// o -> ö
 0075	00fc	// u -> ü
-0079	00ff	// y -> ÿ
 0041	00c4	// A -> Ä
 0045	00cb	// E -> Ë
-0049	00cf	// I -> Ï
 004f	00d6	// O -> Ö
 0055	00dc	// U -> Ü
-0059	0178	// Y -> Ÿ
 0020	00a8	// space -> diaeresis
 
 KEYNAME

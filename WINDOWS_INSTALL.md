@@ -88,20 +88,53 @@ Set-WinUserLanguageList $layoutList -Force
 Po instalaci můžete layout otestovat v poznámkovém bloku (Notepad):
 
 ```
-Základní znaky: ěščřžýáíé
-S Shiftem: ĚŠČŘŽÝÁÍÉ
+Základní znaky na číselné řadě: ěščřžýáíé
+S Shiftem: 1234567890 (klasické číslice)
 Dead keys: 
-  - AltGr + = (caron): c → č, s → š, r → ř
-  - AltGr + - (acute): a → á, e → é, i → í
+  - = pak písmeno: dead caron - c → č, s → š, r → ř, z → ž, e → ě
+  - Shift + = pak písmeno: dead acute - a → á, e → é, i → í, o → ó, u → ú, y → ý
 ```
 
-## Klávesové zkratky (AltGr)
+## Klávesové zkratky
 
-- **AltGr + E**: € (Euro)
-- **AltGr + [ (ú)**: [ (hranaté závorky)
-- **AltGr + ; (ů)**: ; (středník)
-- **AltGr + =**: Dead caron (háček)
-- **AltGr + \**: Dead diaeresis (přehláska)
+**Základní layout (bez modifikátorů):**
+- Číselná řada: `ěščřžýáíé` (místo 1234567890)
+- `[` klávesa: `ú` (uacute)
+- `;` klávesa: `ů` (uring)
+
+**Se Shiftem:**
+- Číselná řada: `1234567890` (klasické číslice)
+- `[` + Shift: `{`
+- `;` + Shift: `:`
+
+**S AltGr (pravý Alt):**
+- **AltGr + 2**: `@`
+- **AltGr + 3**: `#`
+- **AltGr + 4**: `$`
+- **AltGr + 5**: `%`
+- **AltGr + 6**: `^`
+- **AltGr + 7**: `&`
+- **AltGr + 8**: `*`
+- **AltGr + 9**: `(`
+- **AltGr + 0**: `)`
+- **AltGr + =**: `=`
+- **AltGr + E**: `€` (Euro)
+- **AltGr + [**: `[` (levá hranatá závorka)
+- **AltGr + ;**: `;` (středník)
+- **AltGr + \**: Dead diaeresis (přehláska) - a→ä, e→ë, o→ö, u→ü
+
+**S AltGr + Shift:**
+- **AltGr + Shift + =**: `+`
+- **AltGr + Shift + 3**: `Š`
+- **AltGr + Shift + 4**: `Č`
+- **AltGr + Shift + 5**: `Ř`
+- **AltGr + Shift + 6**: `Ž`
+- **AltGr + Shift + 7**: `Ý`
+- **AltGr + Shift + 8**: `Á`
+- **AltGr + Shift + 9**: `Í`
+- **AltGr + Shift + 0**: `É`
+- **AltGr + Shift + [**: `Ú`
+- **AltGr + Shift + ;**: `Ů`
 
 ## Problémy a řešení
 
