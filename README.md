@@ -19,21 +19,25 @@ Zkopírujte obsah souboru `czenglish_layout` do `/usr/share/X11/xkb/symbols/cz` 
 
 ### Windows
 
+#### Varianta A: Instalace z připraveného balíčku (nejjednodušší)
+
+1. **Stáhněte a rozbalte** `czenglish-dotname.zip`
+2. **Spusťte** `setup.exe` jako administrátor
+3. **Restartujte** počítač nebo se odhlaste a přihlaste
+4. **Aktivujte** layout:
+   - Settings → Time & Language → Language & region
+   - Czech → Options → Add a keyboard → Czech (dotname)
+5. **Přepínejte** layouty pomocí Windows + Space
+
+#### Varianta B: Kompilace ze zdrojového souboru
+
 1. **Stáhněte Microsoft Keyboard Layout Creator (MSKLC)**
    - [MSKLC Download](https://www.microsoft.com/en-us/download/details.aspx?id=102134)
-   
 2. **Zkompilujte layout**
    - Otevřete MSKLC
    - Načtěte soubor `czenglish.klc` (File → Load Source File)
    - Zkompilujte: Project → Build DLL and Setup Package
-   
-3. **Nainstalujte**
-   - Spusťte vygenerovaný `setup.exe` jako administrátor
-   - Nebo použijte skript: `Install-Windows.bat`
-   
-4. **Aktivujte**
-   - Settings → Time & Language → Language & region
-   - Czech → Options → Add a keyboard → Czech CZ-EN
+3. **Nainstalujte** vygenerovaný `setup.exe` jako administrátor
 
 ## Layout funkce
 
@@ -59,10 +63,16 @@ Speciální znaky: @ # $ % ^ & * ( ) = € [ ;
 
 ## Soubory
 
+### Linux
 - `czenglish_layout` - XKB layout definice pro Linux
 - `evdev.xml` - Fragment pro registraci v XKB
-- `czenglish.klc` - Microsoft Keyboard Layout Creator soubor pro Windows
-- `Install-Windows.bat` - Instalační skript pro Windows
+
+### Windows
+- `czenglish-dotname.zip` - **Připravený instalační balíček pro Windows** (doporučeno)
+- `czenglish.klc` - Zdrojový soubor pro Microsoft Keyboard Layout Creator
+- `Install-Windows.bat` - Pomocný instalační skript
+
+### Dokumentace
 - `czenglish-keyboard-layout.png` - Vizualizace layoutu
 
 ## Licence
