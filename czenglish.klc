@@ -1,4 +1,4 @@
-KBD	czengls	"Czech (czenglish)"
+KBD	czengls	"Czech CZ-EN"
 
 COPYRIGHT	"(c) 2025 Tomas Mark"
 
@@ -45,7 +45,7 @@ LAYOUT		;an extra '@' at the end is a dead key
 17	I		1	i	I	-1	-1	-1		// LATIN SMALL LETTER I, LATIN CAPITAL LETTER I
 18	O		1	o	O	-1	-1	-1		// LATIN SMALL LETTER O, LATIN CAPITAL LETTER O
 19	P		1	p	P	-1	-1	-1		// LATIN SMALL LETTER P, LATIN CAPITAL LETTER P
-1a	OEM_4		0	00fa	007b	-1	005b	00da		// UACUTE, LEFT CURLY BRACKET, , LEFT SQUARE BRACKET, UACUTE (upper)
+1a	OEM_4		0	005b	007b	-1	-1	-1		// LEFT SQUARE BRACKET, LEFT CURLY BRACKET
 1b	OEM_6		0	005d	007d	-1	-1	-1		// RIGHT SQUARE BRACKET, RIGHT CURLY BRACKET
 1e	A		1	a	A	-1	-1	-1		// LATIN SMALL LETTER A, LATIN CAPITAL LETTER A
 1f	S		1	s	S	-1	-1	-1		// LATIN SMALL LETTER S, LATIN CAPITAL LETTER S
@@ -59,7 +59,7 @@ LAYOUT		;an extra '@' at the end is a dead key
 27	OEM_1		0	016f	003a	-1	003b	016e		// URING, COLON, , SEMICOLON, URING (upper)
 28	OEM_7		0	0027	0022	-1	-1	-1		// APOSTROPHE, QUOTATION MARK
 29	OEM_3		0	0060	007e	-1	-1	-1		// GRAVE ACCENT, TILDE
-2b	OEM_5		0	005c	007c	-1	00a8@	-1		// REVERSE SOLIDUS, VERTICAL LINE, , DIAERESIS (dead)
+2b	OEM_5		0	005c	007c	-1	-1	-1		// REVERSE SOLIDUS, VERTICAL LINE
 2c	Z		1	z	Z	-1	-1	-1		// LATIN SMALL LETTER Z, LATIN CAPITAL LETTER Z
 2d	X		1	x	X	-1	-1	-1		// LATIN SMALL LETTER X, LATIN CAPITAL LETTER X
 2e	C		1	c	C	-1	-1	-1		// LATIN SMALL LETTER C, LATIN CAPITAL LETTER C
@@ -76,51 +76,41 @@ LAYOUT		;an extra '@' at the end is a dead key
 
 DEADKEY	00b4
 
-0061	00e1	// a -> Ã¡
-0065	00e9	// e -> Ã©
-0069	00ed	// i -> Ã­
-006f	00f3	// o -> Ã³
-0075	00fa	// u -> Ãº
-0079	00fd	// y -> Ã½
-0041	00c1	// A -> Ã
-0045	00c9	// E -> Ã‰
-0049	00cd	// I -> Ã
-004f	00d3	// O -> Ã“
-0055	00da	// U -> Ãš
-0059	00dd	// Y -> Ã
+0061	00e1	// a -> á
+0065	00e9	// e -> é
+0069	00ed	// i -> í
+006f	00f3	// o -> ó
+0075	00fa	// u -> ú
+0079	00fd	// y -> ý
+0041	00c1	// A -> Á
+0045	00c9	// E -> É
+0049	00cd	// I -> Í
+004f	00d3	// O -> Ó
+0055	00da	// U -> Ú
+0059	00dd	// Y -> Ý
 0020	00b4	// space -> acute accent
 
 DEADKEY	02c7
 
-0063	010d	// c -> Ä
-0064	010f	// d -> Ä
-0065	011b	// e -> Ä›
-006e	0148	// n -> Åˆ
-0072	0159	// r -> Å™
-0073	0161	// s -> Å¡
-0074	0165	// t -> Å¥
-007a	017e	// z -> Å¾
-0043	010c	// C -> ÄŒ
-0044	010e	// D -> ÄŽ
-0045	011a	// E -> Äš
-004e	0147	// N -> Å‡
-0052	0158	// R -> Å˜
-0053	0160	// S -> Å 
-0054	0164	// T -> Å¤
-005a	017d	// Z -> Å½
+0063	010d	// c -> è
+0064	010f	// d -> ï
+0065	011b	// e -> ì
+006e	0148	// n -> ò
+0072	0159	// r -> ø
+0073	0161	// s -> š
+0074	0165	// t -> 
+007a	017e	// z -> ž
+0043	010c	// C -> È
+0044	010e	// D -> Ï
+0045	011a	// E -> Ì
+004e	0147	// N -> Ò
+0052	0158	// R -> Ø
+0053	0160	// S -> Š
+0054	0164	// T -> 
+005a	017d	// Z -> Ž
 0020	02c7	// space -> caron
 
-DEADKEY	00a8
 
-0061	00e4	// a -> Ã¤
-0065	00eb	// e -> Ã«
-006f	00f6	// o -> Ã¶
-0075	00fc	// u -> Ã¼
-0041	00c4	// A -> Ã„
-0045	00cb	// E -> Ã‹
-004f	00d6	// O -> Ã–
-0055	00dc	// U -> Ãœ
-0020	00a8	// space -> diaeresis
 
 KEYNAME
 
@@ -205,7 +195,6 @@ KEYNAME_DEAD
 
 00b4	"ACUTE ACCENT"
 02c7	"CARON"
-00a8	"DIAERESIS"
 
 
 DESCRIPTIONS
