@@ -42,7 +42,6 @@ xkb_symbols "czenglish" {
     key <AC07> {        [         j,    J               ]       };
     key <AC08> {        [         k,    K               ]       };
     key <AC09> {        [         l,    L               ]       };
-    key <AC09> {        [         l,    L               ]       };
     key <AC10> {        [     uring,    colon, semicolon, Uring]       };
     key <AC11> {        [apostrophe,    quotedbl        ]       };
 
