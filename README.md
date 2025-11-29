@@ -1,6 +1,11 @@
 # Czech (czenglish) Keyboard Layout
 
-Další rozložení české klávesnice pro zachování maximální kompatibility s US anglickým rozložením.
+Další rozložení české klávesnice pro zachování maximální kompatibility s US anglickým rozložením. Stále ještě vylepšuji.
+
+![nativní](image.png)
+![aktivní shift](image-1.png)
+![aktivní altgr](image-2.png)
+![aktivní shift + altgr](image-3.png)
 
 # Instalace
 
@@ -43,38 +48,3 @@ zastaralé, potřebuje aktualizaci - v plánu
    - Načtěte soubor `czenglish.klc` (File → Load Source File)
    - Zkompilujte: Project → Build DLL and Setup Package
 3. **Nainstalujte** vygenerovaný `setup.exe` jako administrátor
-
-## Layout funkce
-
-### Základní české znaky (bez Shift):
-```
-Klávesy: 2 3 4 5 6 7 8 9 0 ; [
-Znaky:   ě š č ř ž ý á í é ů ú
-```
-
-### Se Shiftem:
-```
-Číslice: 1 2 3 4 5 6 7 8 9 0
-```
-
-### S AltGr (pravý Alt / Ctrl+Alt):
-```
-Speciální znaky: @ # $ % ^ & * ( ) = € [ ;
-```
-
-### Dead keys:
-- **`=` klávesa**: Dead acute → pak písmeno → á, é, í, ó, ú, ý
-- **Shift + `=`**: Dead caron → pak písmeno → č, ď, ě, ň, ř, š, ť, ž
-
-## Soubory
-
-- `czenglish_layout` - XKB layout definice pro Linux
-- `evdev.xml` - Fragment pro registraci v XKB
-- `czenglish.klc` - Microsoft Keyboard Layout Creator soubor pro Windows
-- `Install-Windows.bat` - Instalační skript pro Windows
-- `czenglish-keyboard-layout.png` - Vizualizace layoutu
-
-## Licence
-
-© 2025 Tomas Mark (tomas@digitalspace.name)
-
