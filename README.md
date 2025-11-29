@@ -27,11 +27,9 @@ Nebo manuální instalace:
 2. **Restartujte X server** nebo se odhlaste a přihlaste znovu
 3. **Vyberte nový layout** v nastavení klávesnice vašeho desktopového prostředí (např. GNOME, KDE, XFCE).
 
-### Windows
+### Windows - aktuální k 2025/11/29
 
 #### Varianta A: Stažení připraveného instalátoru (doporučeno)
-
-zastaralé, potřebuje aktualizaci - v plánu
 
 1. **Stáhněte instalátor** z [GitHub Releases](https://github.com/tomasmark79/czenglish/releases)
 2. **Rozbalte ZIP** a spusťte `setup.exe` jako administrátor
@@ -50,3 +48,4 @@ zastaralé, potřebuje aktualizaci - v plánu
    - Načtěte soubor `czenglish.klc` (File → Load Source File)
    - Zkompilujte: Project → Build DLL and Setup Package
 3. **Nainstalujte** vygenerovaný `setup.exe` jako administrátor
+
