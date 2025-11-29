@@ -40,11 +40,20 @@ echo -e "${GREEN}✓ Zálohy vytvořeny${NC}"
 # Přidání layoutu do symbols/cz
 echo -e "${YELLOW}Přidávám layout do $XKB_SYMBOLS...${NC}"
 if grep -q "xkb_symbols \"czenglish\"" "$XKB_SYMBOLS"; then
-    echo -e "${YELLOW}! Layout czenglish již existuje, přeskakuji...${NC}"
-else
-    cat czenglish_layout >> "$XKB_SYMBOLS"
-    echo -e "${GREEN}✓ Layout přidán${NC}"
+    echo -e "${YELLOW}! Layout czenglish již existuje, aktualizuji...${NC}"
+    # Odstraní starý layout (od xkb_symbols "czenglish" až po }; na konci bloku)
+    TEMP_FILE=$(mktemp)
+    awk '
+        /xkb_symbols "czenglish"/ { skip=1; brace_count=0 }
+        skip && /{/ { brace_count++ }
+        skip && /}/ { brace_count--; if (brace_count <= 0) { skip=0; next } }
+        !skip { print }
+    ' "$XKB_SYMBOLS" > "$TEMP_FILE"
+    cp "$TEMP_FILE" "$XKB_SYMBOLS"
+    rm "$TEMP_FILE"
 fi
+cat czenglish_layout >> "$XKB_SYMBOLS"
+echo -e "${GREEN}✓ Layout přidán/aktualizován${NC}"
 
 # Přidání varianty do evdev.xml
 echo -e "${YELLOW}Registruji variantu v $XKB_RULES...${NC}"
