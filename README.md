@@ -1,25 +1,30 @@
 # Czech (czenglish) Keyboard Layout
 
-Rozložení české klávesnice pro zachování maximální podoby US amerického rozložení. V kombinaci s US anglickou klávesnicí se při přepínání těchto dvou rozložení minimalizuje potřeba myslet na změny v klasickém českém rozložení, a zůstávají přístupné formátovací znaky pro Markdown pouze z levé ruky, atd.
+Další rozložení české klávesnice pro zachování maximální kompatibility s US anglickým rozložením.
 
-![image](czenglish-keyboard-layout.png)
+# Instalace
 
-## Instalace
+### Linux (XKB) - aktuální k 2025/11/29
 
-### Linux (X11/XKB)
-
-Konfigurace probíhá v:
+Použijte script pro automatickou instalaci:
 
 ```bash
-sudo vim /usr/share/X11/xkb/symbols/cz
-sudo vim /usr/share/X11/xkb/rules/evdev.xml
-```
+git clone https://github.com/tomasmark79/czenglish.git
+cd czenglish
+./Install-Linux.sh
+```   
 
-Zkopírujte obsah souboru `czenglish_layout` do `/usr/share/X11/xkb/symbols/cz` a přidejte variantu z `evdev.xml` do `/usr/share/X11/xkb/rules/evdev.xml`.
+Nebo manuální instalace:
+
+1. **Zkopírujte soubory** `czenglish_layout` a `evdev.xml` do `/usr/share/X11/xkb/symbols/` a `/usr/share/X11/xkb/rules/` (vyžaduje root oprávnění)
+2. **Restartujte X server** nebo se odhlaste a přihlaste znovu
+3. **Vyberte nový layout** v nastavení klávesnice vašeho desktopového prostředí (např. GNOME, KDE, XFCE).
 
 ### Windows
 
 #### Varianta A: Stažení připraveného instalátoru (doporučeno)
+
+zastaralé, potřebuje aktualizaci - v plánu
 
 1. **Stáhněte instalátor** z [GitHub Releases](https://github.com/tomasmark79/czenglish/releases)
 2. **Rozbalte ZIP** a spusťte `setup.exe` jako administrátor
