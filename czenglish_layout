@@ -22,14 +22,14 @@ xkb_symbols "czenglish" {
 
     key <AD01> {        [         q,    Q               ]       };
     key <AD02> {        [         w,    W               ]       };
-    key <AD03> {        [         e,    E, EuroSign     ]       };
+    key <AD03> {        [         e,    E,      EuroSign        ]       };
     key <AD04> {        [         r,    R               ]       };
     key <AD05> {        [         t,    T,      tcaron, Tcaron] };
     key <AD06> {        [         y,    Y               ]       };
     key <AD07> {        [         u,    U               ]       };
     key <AD08> {        [         i,    I               ]       };
     key <AD09> {        [         o,    O,      oacute, Oacute] };
-    key <AD10> {        [         p,    P               ]       };
+    key <AD10> {        [         p,    P,      section, ssharp] };
     key <AD11> {        [    uacute,    braceleft, bracketleft, Uacute] };
     key <AD12> {        [bracketright,  braceright      ]       };
 
