@@ -6,7 +6,7 @@ xkb_symbols "czenglish" {
 
     name[Group1]= "Czech (czenglish)";
 
-    key <TLDE> {        [     grave,    asciitilde      ]       };
+    key <TLDE> {        [     grave,    asciitilde,     degree, dead_abovering] };
     key <AE01> {        [         1,    exclam          ]       };
     key <AE02> {        [    ecaron,    2, at, Ecaron]          };
     key <AE03> {        [    scaron,    3, numbersign, Scaron]  };
@@ -16,8 +16,8 @@ xkb_symbols "czenglish" {
     key <AE07> {        [    yacute,    7, ampersand, Yacute]   };
     key <AE08> {        [    aacute,    8, asterisk, Aacute]    };
     key <AE09> {        [    iacute,    9, parenleft, Iacute]   };
-    key <AE10> {        [    eacute,    0, parenright, Eacute]  };
-    key <AE11> {        [     minus,    underscore      ]       };
+    key <AE10> {        [    eacute,    0, parenright, Eacute]   };
+    key <AE11> {        [     minus,    underscore,     endash, emdash] };
     key <AE12> {        [dead_acute,    dead_caron,     equal,  plus]   };
 
     key <AD01> {        [         q,    Q               ]       };
@@ -34,7 +34,7 @@ xkb_symbols "czenglish" {
     key <AD12> {        [bracketright,  braceright      ]       };
 
     key <AC01> {        [         a,    A               ]       };
-    key <AC02> {        [         s,    S               ]       };
+    key <AC02> {        [         s,    S,      section, ssharp] };
     key <AC03> {        [         d,    D,      dcaron, Dcaron] };
     key <AC04> {        [         f,    F               ]       };
     key <AC05> {        [         g,    G               ]       };
@@ -46,15 +46,15 @@ xkb_symbols "czenglish" {
     key <AC11> {        [apostrophe,    quotedbl        ]       };
 
     key <AB01> {        [         z,    Z               ]       };
-    key <AB02> {        [         x,    X               ]       };
+    key <AB02> {        [         x,    X,      multiply, division] };
     key <AB03> {        [         c,    C               ]       };
     key <AB04> {        [         v,    V               ]       };
     key <AB05> {        [         b,    B               ]       };
     key <AB06> {        [         n,    N,      ncaron, Ncaron] };
     key <AB07> {        [         m,    M               ]       };
-    key <AB08> {        [     comma,    less            ]       };
-    key <AB09> {        [    period,    greater         ]       };
-    key <AB10> {        [     slash,    question        ]       };
+    key <AB08> {        [     comma,    less,   doublelowquotemark, singlelowquotemark] };
+    key <AB09> {        [    period,    greater, leftdoublequotemark, leftsinglequotemark] };
+    key <AB10> {        [     slash,    question,       ellipsis        ]       };
     key <BKSL> {        [ backslash,    bar,            dead_diaeresis] };
 
     include "level3(ralt_switch)"
