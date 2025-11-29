@@ -1,6 +1,8 @@
-# Czech (czenglish) Keyboard Layout
+# Czenglish Keyboard Layout
 
-Další rozložení české klávesnice pro zachování maximální kompatibility s US anglickým rozložením. Stále ještě vylepšuji.
+České rozložení klávesnice pro zachování maximální kompatibility s anglickým rozložením.
+
+> layout se ještě stále upravuje
 
 ![nativní](image.png)
 ![aktivní shift](image-1.png)
