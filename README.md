@@ -31,8 +31,8 @@ cd czenglish
 ```nix
 services.xserver = {
   enable = true;
-  extraLayouts.czenglish = {
-    description = "Czenglish by Tomáš Mark";
+  xkb.extraLayouts.czenglish = {
+    description = "Czenglish";
     languages = [ "ces" ];
     symbolsFile = pkgs.fetchFromGitHub {
       owner = "tomasmark79";
@@ -41,7 +41,8 @@ services.xserver = {
       sha256 = "0ljvrc0vvbfnyizgyy7swl38qkg3lwyhqa4nifdwn020bqyi7b3q";
     } + "/czenglish_layout";
   };
-  xkb.layout = "czenglish";
+  xkb.layout = "us";
+  xkb.options = "eurosign:e,caps:escape";
 };
 ```
 
