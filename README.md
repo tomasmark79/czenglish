@@ -31,9 +31,9 @@ cd czenglish
 ```nix
 services.xserver = {
   enable = true;
-  xkb.extraLayouts.czenglish = {
+  xkb.extraLayouts.cze = {
     description = "Czenglish";
-    languages = [ "ces" ];
+    languages = [ "czech" ];
     symbolsFile = pkgs.fetchFromGitHub {
       owner = "tomasmark79";
       repo = "czenglish";
