@@ -21,11 +21,29 @@ cd czenglish
 ./Install-Linux.sh
 ```   
 
-Nebo manuální instalace:
+#### Manuální hack instalace
 
 1. **Zkopírujte soubory** `czenglish_layout` a `evdev.xml` do `/usr/share/X11/xkb/symbols/` a `/usr/share/X11/xkb/rules/` (vyžaduje root oprávnění)
 2. **Restartujte X server** nebo se odhlaste a přihlaste znovu
 3. **Vyberte nový layout** v nastavení klávesnice vašeho desktopového prostředí (např. GNOME, KDE, XFCE).
+
+#### NixOS
+```nix
+services.xserver = {
+  enable = true;
+  extraLayouts.czenglish = {
+    description = "Czenglish by Tomáš Mark";
+    languages = [ "ces" ];
+    symbolsFile = pkgs.fetchFromGitHub {
+      owner = "tomasmark79";
+      repo = "czenglish";
+      rev = "master";
+      sha256 = "0ljvrc0vvbfnyizgyy7swl38qkg3lwyhqa4nifdwn020bqyi7b3q";
+    } + "/czenglish_layout";
+  };
+  xkb.layout = "czenglish";
+};
+```
 
 ### Windows - aktuální k 2025/11/29
 
@@ -48,4 +66,5 @@ Nebo manuální instalace:
    - Načtěte soubor `czenglish.klc` (File → Load Source File)
    - Zkompilujte: Project → Build DLL and Setup Package
 3. **Nainstalujte** vygenerovaný `setup.exe` jako administrátor
+
 
