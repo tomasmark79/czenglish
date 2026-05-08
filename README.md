@@ -2,24 +2,46 @@
 
 České rozložení klávesnice pro zachování maximální kompatibility s anglickým rozložením.
 
-> layout se ještě stále upravuje
+> Prakticky se jedná o finální verzi rozložení
 
-![nativní](image.png)
-![aktivní shift](image-1.png)
-![aktivní altgr](image-2.png)
-![aktivní shift + altgr](image-3.png)
+![nativní](czenglish-1.png)
+![se shiftem a s pravým altem](czenglish-2.png)
+![se shiftem](czenglish-3.png)
+![s pravým altem (altgr)](czenglish-4.png)
 
 # Instalace
 
-### Linux (XKB) - aktuální k 2025/11/29
+### Linux (XKB)
 
 Použijte script pro automatickou instalaci:
 
 ```bash
 git clone https://github.com/tomasmark79/czenglish.git
-cd czenglish
+cd czenglish![alt text](image.png)
 ./Install-Linux.sh
 ```   
+
+#### NixOS
+```nix
+# Czenglish keyboard layout
+  services.xserver.xkb = {
+    extraLayouts.cze = {
+      description = "Czenglish";
+      languages = [ "czech" ];
+      symbolsFile =
+        pkgs.fetchFromGitHub {
+          owner = "tomasmark79";
+          repo = "czenglish";
+          rev = "5a405e5f96103e997a9f5f64e0403eb5a1e8f6c0";
+          hash = "sha256-i0NDINIy8kOHT+QRC+lZ8VzOJT2rguqCNr8dbCvCFkc=";
+        }
+        + "/czenglish_layout";
+    };
+    layout = "us";
+    variant = "";
+    options = "eurosign:e,caps:escape";
+  };
+```
 
 #### Manuální hack instalace
 
@@ -27,26 +49,7 @@ cd czenglish
 2. **Restartujte X server** nebo se odhlaste a přihlaste znovu
 3. **Vyberte nový layout** v nastavení klávesnice vašeho desktopového prostředí (např. GNOME, KDE, XFCE).
 
-#### NixOS
-```nix
-services.xserver = {
-  enable = true;
-  xkb.extraLayouts.cze = {
-    description = "Czenglish";
-    languages = [ "czech" ];
-    symbolsFile = pkgs.fetchFromGitHub {
-      owner = "tomasmark79";
-      repo = "czenglish";
-      rev = "master";
-      sha256 = "0ljvrc0vvbfnyizgyy7swl38qkg3lwyhqa4nifdwn020bqyi7b3q";
-    } + "/czenglish_layout";
-  };
-  xkb.layout = "us";
-  xkb.options = "eurosign:e,caps:escape";
-};
-```
-
-### Windows - aktuální k 2025/11/29
+### Windows - aktuální k 2025/11/29 - potřebuje aktualizaci
 
 #### Varianta A: Stažení připraveného instalátoru (doporučeno)
 
