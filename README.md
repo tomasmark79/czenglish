@@ -70,5 +70,11 @@ cd czenglish![alt text](image.png)
    - Načtěte soubor `czenglish.klc` (File → Load Source File)
    - Zkompilujte: Project → Build DLL and Setup Package
 3. **Nainstalujte** vygenerovaný `setup.exe` jako administrátor
+4. **Odebrání klávesnice** - odinstalace instalatorem
+5. **Odebrání klávesnice** - když selže odinstalace instalátorem  
+   a. smazat klíč z registru   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard   Layouts\a0000405  
+   b. restart Windows  
+   c. smazat ve Windows/system32 a Windows/systemWow64 soubor Czenglis.dll  
+
 
 
