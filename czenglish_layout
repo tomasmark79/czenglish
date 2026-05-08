@@ -7,7 +7,7 @@ xkb_symbols "czenglish" {
     name[Group1]= "Czech (czenglish)";
 
     key <TLDE> {        [     grave,    asciitilde,     degree, dead_abovering] };
-    key <AE01> {        [         1,    exclam          ]       };
+    key <AE01> {        [    tcaron,    1, exclam, Tcaron]       };
     key <AE02> {        [    ecaron,    2, at, Ecaron]          };
     key <AE03> {        [    scaron,    3, numbersign, Scaron]  };
     key <AE04> {        [    ccaron,    4, dollar, Ccaron]      };
