@@ -49,7 +49,7 @@ cd czenglish![alt text](image.png)
 2. **Restartujte X server** nebo se odhlaste a přihlaste znovu
 3. **Vyberte nový layout** v nastavení klávesnice vašeho desktopového prostředí (např. GNOME, KDE, XFCE).
 
-### Windows - aktuální k 2025/11/29 - potřebuje aktualizaci
+### Windows
 
 #### Varianta A: Stažení připraveného instalátoru (doporučeno)
 
