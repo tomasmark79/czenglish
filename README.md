@@ -1,8 +1,10 @@
 # Czenglish Keyboard Layout
 
-České rozložení klávesnice pro zachování maximální kompatibility s anglickým rozložením.
+Speciální české rozložení klávesnice pro zachování maximální kompatibility s anglickým rozložením. 
 
-> Prakticky se jedná o finální verzi rozložení
+> Výjimečnost tohoto rozložení spočívá v tom, že **apostrof**, **vlnka**, **lomítko**, **zpětné lomítko**, **otazník** a **mnoho dalších znaků** zůstává na svém původním anglickém rozložení, což je velmi praktické v případě, že jste vývojář.
+
+> Prakticky se již jedná o finální verzi rozložení a dlouhodobě rozložení používám
 
 ![nativní](czenglish-1.png)
 ![se shiftem a s pravým altem](czenglish-2.png)
