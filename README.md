@@ -140,7 +140,7 @@ Technické zdroje: [přepínání vstupních zdrojů v GNOME](https://github.com
 Tím se nainstaluje pouze část XKB. Pro registraci IBus použijte instalátor
 výše. Systémové aktualizace mohou ruční změny přepsat.
 
-### Windows - aktuální k 2025/11/29 - potřebuje aktualizaci
+### Windows
 
 #### Varianta A: Stažení připraveného instalátoru (doporučeno)
 
@@ -161,6 +161,12 @@ výše. Systémové aktualizace mohou ruční změny přepsat.
    - Načtěte soubor `czenglish.klc` (File → Load Source File)
    - Zkompilujte: Project → Build DLL and Setup Package
 3. **Nainstalujte** vygenerovaný `setup.exe` jako administrátor
+4. **Odebrání klávesnice** - odinstalace instalatorem
+5. **Odebrání klávesnice** - když selže odinstalace instalátorem  
+   a. smazat klíč z registru   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard   Layouts\a0000405  
+   b. restart Windows  
+   c. smazat ve Windows/system32 a Windows/systemWow64 soubor Czenglis.dll  
+
 
 
 
