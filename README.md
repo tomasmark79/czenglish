@@ -13,13 +13,38 @@
 
 ### Linux (XKB)
 
-Použijte script pro automatickou instalaci:
+Instalátor vyžaduje Bash a Python 3.8 nebo novější (balíček `python3`).
+Na běžném Linuxu použijte:
 
 ```bash
 git clone https://github.com/tomasmark79/czenglish.git
-cd czenglish![alt text](image.png)
-./Install-Linux.sh
-```   
+cd czenglish
+sudo ./install-linux.sh
+```
+
+Skript nainstaluje variantu `cz(czenglish)` a při nalezení IBus Simple doplní
+engine `xkb:cz:czenglish:ces`. Před změnami ověří XML a vytvoří zálohy upravovaných
+souborů vedle originálů (`*.backup.DATUM_ČAS`). Opakované spuštění aktualizuje
+Czenglish bez duplikování záznamů. Pokud IBus není nainstalovaný, část IBus
+přeskočí a oznámí to.
+
+Po instalaci se odhlaste a znovu přihlaste. V nastavení klávesnice vyberte
+**Czech (czenglish)**. Registraci v IBus ověřte jako přihlášený uživatel:
+
+```bash
+ibus list-engine | grep 'xkb:cz:czenglish:ces'
+```
+
+IBus Simple se hledá v `/usr/share/ibus/component/simple.xml` a
+`/usr/local/share/ibus/component/simple.xml`. Pro jinou instalaci lze cestu zadat:
+
+```bash
+sudo ./install-linux.sh --ibus-component /opt/ibus/share/ibus/component/simple.xml
+```
+
+Aktualizace systémových balíčků XKB nebo IBus mohou změny přepsat; v takovém
+případě spusťte instalátor znovu. Skript nerestartuje běžící uživatelskou relaci.
+Na NixOS používejte následující deklarativní konfiguraci.
 
 #### NixOS
 ```nix
@@ -27,7 +52,7 @@ cd czenglish![alt text](image.png)
   services.xserver.xkb = {
     extraLayouts.cze = {
       description = "Czenglish";
-      languages = [ "czech" ];
+      languages = [ "ces" ]; # ISO 639-2 kód češtiny
       symbolsFile =
         pkgs.fetchFromGitHub {
           owner = "tomasmark79";
@@ -43,11 +68,77 @@ cd czenglish![alt text](image.png)
   };
 ```
 
-#### Manuální hack instalace
+#### GNOME a IBus
 
-1. **Zkopírujte soubory** `czenglish_layout` a `evdev.xml` do `/usr/share/X11/xkb/symbols/` a `/usr/share/X11/xkb/rules/` (vyžaduje root oprávnění)
-2. **Restartujte X server** nebo se odhlaste a přihlaste znovu
-3. **Vyberte nový layout** v nastavení klávesnice vašeho desktopového prostředí (např. GNOME, KDE, XFCE).
+Czenglish je rozložení **XKB**: soubor `czenglish_layout` určuje, jaký znak
+vznikne stiskem klávesy, případně se Shiftem nebo pravým Altem. Pro samotné
+mapování českých znaků není potřeba psát vlastní vstupní metodu.
+
+**IBus** (Intelligent Input Bus) zajišťuje vstupní metody, například skládání
+japonského nebo čínského textu. GNOME s ním synchronizuje také přepínání běžných
+rozložení XKB. IBus proto potřebuje mít rozložení zaregistrované ve svém seznamu
+enginů. Engine je obsluha konkrétní vstupní metody; pro Czenglish stačí již
+existující obsluha IBus Simple a doplnění jejího seznamu.
+
+V IBus 1.5.33 je tento seznam statický. Přidání vlastního rozložení do XKB jej
+samo nerozšíří. Chyba `Cannot find engine xkb:cze::eng` tedy neznamená, že jsou
+špatně definované české znaky. GNOME hledá záznam, který IBus nezná. Koncovka
+`eng` může vzniknout jako výchozí hodnota, pokud GNOME nezíská platný jazyk
+rozložení; proto je nutné opravit také `czech` na `ces` v konfiguraci výše.
+
+Pro **NixOS s GNOME a IBus 1.5.33** přidejte vedle `services.xserver.xkb` také
+následující overlay. Doplní engine `xkb:cze::ces` bez překladu samotného IBus:
+
+```nix
+nixpkgs.overlays = [
+  (_final: prev: {
+    ibus-with-plugins = prev.ibus-with-plugins.overrideAttrs (old: {
+      pathsToLink = old.pathsToLink ++ [ "/share/ibus/component" ];
+      postBuild = (old.postBuild or "") + ''
+        simpleXml="$out/share/ibus/component/simple.xml"
+        cp --remove-destination ${prev.ibus}/share/ibus/component/simple.xml "$simpleXml"
+        chmod u+w "$simpleXml"
+        substituteInPlace "$simpleXml" --replace-fail '</engines>' '<engine>
+          <name>xkb:cze::ces</name>
+          <language>cs</language>
+          <layout>cze</layout>
+          <longname>Czenglish</longname>
+          <description>Czenglish</description>
+          <icon>ibus-keyboard</icon>
+          <rank>50</rank>
+        </engine></engines>'
+      '';
+    });
+  })
+];
+```
+
+Po rebuildu se odhlaste a znovu přihlaste. Registraci ověříte příkazem:
+
+```bash
+ibus list-engine | grep 'xkb:cze::ces'
+```
+
+Linuxový skript `install-linux.sh` používá jiné označení: přidává variantu
+`cz(czenglish)`, které v GNOME odpovídá `cz+czenglish` a v IBus
+`xkb:cz:czenglish:ces`. Skript registraci tohoto enginu do nalezené komponenty IBus Simple
+provádí automaticky. Výše uvedený overlay je určený pro samostatné rozložení `cze`
+z návodu pro NixOS, nikoli pro variantu instalovanou tímto skriptem.
+Na NixOS používejte deklarativní konfiguraci výše místo linuxového skriptu.
+
+Technické zdroje: [přepínání vstupních zdrojů v GNOME](https://github.com/GNOME/gnome-shell/blob/main/js/ui/status/keyboard.js),
+[seznam enginů IBus 1.5.33](https://github.com/ibus/ibus/blob/1.5.33/engine/simple.xml.in),
+[projekt IBus](https://github.com/ibus/ibus/wiki).
+
+#### Manuální instalace XKB na běžném Linuxu
+
+1. Zálohujte systémové soubory `symbols/cz` a `rules/evdev.xml` v `/usr/share/X11/xkb/`.
+2. Připojte obsah `czenglish_layout` do `symbols/cz` jako variantu `czenglish`.
+3. Vložte fragment z projektového `evdev.xml` do `<variantList>` českého rozložení `<name>cz</name>` v systémovém `rules/evdev.xml`. Projektový soubor je pouze fragment — nenahrazujte jím celý systémový soubor.
+4. Odhlaste se a přihlaste znovu a vyberte `Czech (czenglish)` v nastavení klávesnice.
+
+Tím se nainstaluje pouze část XKB. Pro registraci IBus použijte instalátor
+výše. Systémové aktualizace mohou ruční změny přepsat.
 
 ### Windows - aktuální k 2025/11/29 - potřebuje aktualizaci
 
@@ -72,3 +163,13 @@ cd czenglish![alt text](image.png)
 3. **Nainstalujte** vygenerovaný `setup.exe` jako administrátor
 
 
+
+### Testy linuxového instalátoru
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+Testy používají dočasný adresář a nepotřebují root. Volba instalátoru
+`--root /cesta/k/pripravenemu/systemu` je určená pro testování a balení;
+cesty včetně `--ibus-component` se pak vztahují k tomuto kořeni.
